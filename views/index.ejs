@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs")%> <%- include("partials/homenavbar.ejs")%>
+<body>
+    <div class="container">
+        <hr>
+        <div class="jumbotron">
+            <h1 class="display-4">Sejam muito Bem-Vindos!</h1>
+            <p class="lead">Este é um simples blog criado por um desenvolvedor chamado Bernardo, quando ele fez este blog, estava estagiando e aprendendo NodeJs.</p>
+            <hr class="my-4">
+            <p>Abaixo esta o link para você poder ver o repositório do Github dele, vai se impressionar em👀.</p>
+            <p class="lead">
+              <a class="btn btn-dark btn-lg" href="https://github.com/bernardodevrocha?tab=repositories" role="button">Github</a>
+            </p>
+          </div>
+    <% articles.forEach(article => { %>
+        <div class="card">
+            <div class="card-header">
+                <h2><%= article.title %></h2>
+            </div><br>
+
+            <div class="card-body">
+                <a class="btn btn-dark" style="color: white;" href="/<%= article.slug %>">Ler artigo</a>
+            </div><br>
+        </div>   
+    <% }) %>
+</div>
+</body>
+<%- include("partials/footer.ejs")%>
