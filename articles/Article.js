@@ -15,7 +15,15 @@ const Article = connection.define('article', {
     body: {
         type: Sequelize.TEXT,
         allowNull: false
-    }
+    },
+    categoryId: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+            model: Category,
+            key: 'id'
+        }
+    }    
 });
 
 Category.hasMany(Article); // Um para muitos
